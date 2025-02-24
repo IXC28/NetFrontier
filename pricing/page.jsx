@@ -22,8 +22,9 @@ const Page = () => {
               </svg>
             </button>
           </div>
-          <nav className="hidden md:flex space-x-6 items-center"><a
-              href="/"
+          <nav className="hidden md:flex space-x-6 items-center">
+            <a
+              href="./"
               className="bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors"
             >
               Volver al inicio
@@ -32,14 +33,11 @@ const Page = () => {
         </div>
         {menuOpen && (
           <nav className="mt-4 flex flex-col space-y-3 items-center">
-            <a href="#services" className="hover:text-red-300 transition-colors">Servicios</a>
-            <a href="#about" className="hover:text-red-300 transition-colors">Acerca de</a>
-            <a href="#contact" className="hover:text-red-300 transition-colors">Contacto</a>
             <a
-              href="#pricing"
+              href="./"
               className="bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors"
             >
-              Precios
+              Volver
             </a>
           </nav>
         )}

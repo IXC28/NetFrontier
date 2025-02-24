@@ -27,7 +27,7 @@ const Page = () => {
             <a href="#about" className="hover:text-red-300 transition-colors">Acerca de</a>
             <a href="#contact" className="hover:text-red-300 transition-colors">Contacto</a>
             <a
-              href="/pricing"
+              href="./pricing/index.html"
               className="bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors"
             >
               Precios
@@ -40,7 +40,7 @@ const Page = () => {
             <a href="#about" className="hover:text-red-300 transition-colors">Acerca de</a>
             <a href="#contact" className="hover:text-red-300 transition-colors">Contacto</a>
             <a
-              href="#pricing"
+              href="./pricing/index.html"
               className="bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors"
             >
               Precios
@@ -95,7 +95,7 @@ const Page = () => {
                 Soluciones de comercio electrónico adaptadas a tus necesidades.
               </p>
               <a
-                href="/pricing"
+                href="./pricing/index.html"
                 className="inline-block px-6 py-3 bg-red-500 text-white rounded-full hover:bg-red-600 transition duration-300 shadow"
               >
                 Ver Precios

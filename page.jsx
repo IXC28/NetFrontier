@@ -137,7 +137,7 @@ const Page = () => {
               </svg>
             </a>
             <a
-              href="https://wa.me/04242410187"
+              href="https://wa.me/+58 4242410187"
               target="_blank"
               className="text-green-600 hover:text-green-800 transition-colors"
             >

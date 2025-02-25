@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-  rel="stylesheet"
-/>
-  <link rel="icon" type="logo/jpeg" href="/imgs/LogoSinFondo.png" />
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="logo/jpeg" href="/imgs/LogoSinFondo.png" />
     <title>NetFrontier</title>
-    <!-- Carga Tailwind CSS vía script -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- React y ReactDOM -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <!-- Babel para transpilar JSX en el navegador -->
+    <!-- Babel Standalone -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@18",
+          "react-dom": "https://esm.sh/react-dom@18"
+        }
+      }
+    </script>
   </head>
   <body>
-    <!-- Elemento raíz para React -->
     <div id="root"></div>
-
-    <!-- Incluye el archivo JSX -->
-    <script type="text/babel" src="./page.jsx"></script>
+    <!-- Carga tus módulos con presets -->
+    <script type="text/babel" data-presets="env,react"  src="./components/Navbar.js"></script>
+    <script type="text/babel" data-presets="env,react"  src="./page.jsx"></script>
   </body>
 </html>

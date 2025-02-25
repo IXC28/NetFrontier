@@ -1,62 +1,22 @@
-const { useState } = React;
+"use client";
+ // Asume que React ya está cargado globalmente 
+ const { useState } = React;
+ // Navbar se ha asignado a window.Navbar en Navbar.js
+ const Navbar = window.Navbar;
 
-const Page = () => {
+function Page() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="font-sans text-gray-800">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-black via-red-900 to-black text-white py-6 px-8 shadow-2xl">
-        <div className="flex justify-between items-center">
-          <a href="/">
-          <h1 className="text-4xl font-extrabold tracking-wide">NetFrontier</h1>
-          </a>
-          <div className="md:hidden">
-            <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {menuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
-          <nav className="hidden md:flex space-x-6 items-center">
-            <a href="#services" className="hover:text-red-300 transition-colors">Servicios</a>
-            <a href="#about" className="hover:text-red-300 transition-colors">Acerca de</a>
-            <a href="#contact" className="hover:text-red-300 transition-colors">Contacto</a>
-            <a
-              href="./pricing/index.html"
-              className="bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors"
-            >
-              Precios
-            </a>
-          </nav>
-        </div>
-        {menuOpen && (
-          <nav className="mt-4 flex flex-col space-y-3 items-center">
-            <a href="#services" className="hover:text-red-300 transition-colors">Servicios</a>
-            <a href="#about" className="hover:text-red-300 transition-colors">Acerca de</a>
-            <a href="#contact" className="hover:text-red-300 transition-colors">Contacto</a>
-            <a
-              href="./pricing/index.html"
-              className="bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors"
-            >
-              Precios
-            </a>
-          </nav>
-        )}
-      </header>
-
+      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center bg-gray-100 px-4 text-center">
         {/* Imagen Hero a pantalla completa */}
         <img
           src="./imgs/fondo2.jpeg"
           alt="Transformación digital"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+          className="absolute inset-0 w-full h-full object-cover" />
         {/* Overlay semitransparente para mejorar la legibilidad */}
         <div className="absolute inset-0 bg-black opacity-40"></div>
         {/* Contenido relativo para que se muestre sobre la imagen y el overlay */}
@@ -133,7 +93,7 @@ const Page = () => {
               className="text-gray-700 hover:text-gray-900 transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm4.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/>
+                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm4.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
               </svg>
             </a>
             <a
@@ -142,8 +102,8 @@ const Page = () => {
               className="text-green-600 hover:text-green-800 transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.1-.47-.149-.668.149-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.058-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.298-.495.1-.198.05-.372-.025-.521-.075-.149-.668-1.611-.916-2.203-.242-.58-.487-.5-.668-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.273.297-1.04 1.015-1.04 2.475s1.065 2.864 1.213 3.062c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.291.173-1.413-.074-.124-.273-.198-.57-.347z"/>
-                <path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 2.122.556 4.1 1.613 5.83L2 22l4.275-1.611C7.89 21.444 9.911 22 12.004 22c5.518 0 10.004-4.486 10.004-9.996C22.008 6.486 17.522 2 12.004 2zM12 20c-1.85 0-3.594-.5-5.143-1.448l-.367-.215L4 20l1.613-2.49-.215-.367C4.5 15.597 4 13.85 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8c0 4.411-3.589 8-8 8z"/>
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.1-.47-.149-.668.149-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.058-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.298-.495.1-.198.05-.372-.025-.521-.075-.149-.668-1.611-.916-2.203-.242-.58-.487-.5-.668-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.273.297-1.04 1.015-1.04 2.475s1.065 2.864 1.213 3.062c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.291.173-1.413-.074-.124-.273-.198-.57-.347z" />
+                <path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 2.122.556 4.1 1.613 5.83L2 22l4.275-1.611C7.89 21.444 9.911 22 12.004 22c5.518 0 10.004-4.486 10.004-9.996C22.008 6.486 17.522 2 12.004 2zM12 20c-1.85 0-3.594-.5-5.143-1.448l-.367-.215L4 20l1.613-2.49-.215-.367C4.5 15.597 4 13.85 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8c0 4.411-3.589 8-8 8z" />
               </svg>
             </a>
 
@@ -165,8 +125,9 @@ const Page = () => {
       </footer>
     </div>
   );
-};
+}
 
+// Monta el componente en #root
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
 root.render(<Page />);

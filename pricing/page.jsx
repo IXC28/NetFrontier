@@ -24,7 +24,7 @@ const Page = () => {
           </div>
           <nav className="hidden md:flex space-x-6 items-center">
             <a
-              href="./"
+              href="/"
               className="bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors"
             >
               Volver al inicio
@@ -34,7 +34,7 @@ const Page = () => {
         {menuOpen && (
           <nav className="mt-4 flex flex-col space-y-3 items-center">
             <a
-              href="./"
+              href="/"
               className="bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors"
             >
               Volver

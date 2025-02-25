@@ -1,4 +1,4 @@
-const Navbar = ({ menuOpen, setMenuOpen, pricing = false }) => {
+const Navbar = ({ menuOpen, setMenuOpen, pricing = false, details = false }) => {
   // Estado para controlar la visibilidad de la navbar
   const [visible, setVisible] = React.useState(true);
   const [lastScrollY, setLastScrollY] = React.useState(window.pageYOffset);
@@ -82,7 +82,20 @@ const Navbar = ({ menuOpen, setMenuOpen, pricing = false }) => {
           React.createElement(
             "nav",
             { className: "hidden md:flex space-x-6 items-center", key: "desktop-nav" },
-            pricing
+            details
+              ? [
+                  React.createElement(
+                    "a",
+                    {
+                      href: "/",
+                      className:
+                        "bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors",
+                      key: "back-button"
+                    },
+                    "Volver al inicio"
+                  )
+                ]
+              : pricing
               ? [
                   React.createElement(
                     "a",
@@ -126,12 +139,22 @@ const Navbar = ({ menuOpen, setMenuOpen, pricing = false }) => {
                   React.createElement(
                     "a",
                     {
-                      href: "./pricing/index.html",
+                      href: "/pricing/index.html",
                       className:
                         "bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors",
                       key: "pricing-link"
                     },
                     "Precios"
+                  ),
+                  React.createElement(
+                    "a",
+                    {
+                      href: "/details/index.html",
+                      className:
+                        "bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors ml-4 transform hover:scale-105 duration-300",
+                      key: "details-link"
+                    },
+                    "Ver Detalles"
                   )
                 ]
           )
@@ -141,7 +164,20 @@ const Navbar = ({ menuOpen, setMenuOpen, pricing = false }) => {
         React.createElement(
           "nav",
           { className: "mt-4 flex flex-col space-y-3 items-center", key: "mobile-nav" },
-          pricing
+          details
+            ? [
+                React.createElement(
+                  "a",
+                  {
+                    href: "/",
+                    className:
+                      "bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors",
+                    key: "back-button-mobile"
+                  },
+                  "Volver al inicio"
+                )
+              ]
+            : pricing
             ? [
                 React.createElement(
                   "a",
@@ -191,6 +227,16 @@ const Navbar = ({ menuOpen, setMenuOpen, pricing = false }) => {
                     key: "m-pricing-link"
                   },
                   "Precios"
+                ),
+                React.createElement(
+                  "a",
+                  {
+                    href: "./details/index.html",
+                    className:
+                      "bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors ml-4 transform hover:scale-105 duration-300",
+                    key: "m-details-link"
+                  },
+                  "Ver Detalles"
                 )
               ]
         )

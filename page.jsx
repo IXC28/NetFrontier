@@ -47,6 +47,12 @@ function Page() {
               <p className="text-gray-600">
                 Sitios modernos y personalizados que realzan la identidad de tu marca.
               </p>
+              <a
+                href="./details/index.html"
+                className="inline-block px-6 py-3 bg-red-500 text-white rounded-full hover:bg-red-600 transition duration-300 shadow"
+              >
+                Ver Detalles
+              </a>
             </div>
             {/* Tiendas Online Card */}
             <div className="bg-gray-50 rounded-xl shadow-lg p-8 transform hover:-translate-y-2 hover:scale-105 transition duration-300 border-l-8 border-red-500">

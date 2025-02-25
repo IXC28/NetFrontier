@@ -1,48 +1,12 @@
 const { useState } = React;
+const Navbar = window.Navbar;
 
 const Page = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="flex flex-col font-sans text-gray-800 bg-gray-100 min-h-screen">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-black via-red-900 to-black text-white py-6 px-8 shadow-2xl">
-        <div className="flex justify-between items-center">
-            <a href="/">
-          <h1 className="text-4xl font-extrabold tracking-wide">NetFrontier</h1>
-          </a>
-          <div className="md:hidden">
-            <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {menuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
-          <nav className="hidden md:flex space-x-6 items-center">
-            <a
-              href="/"
-              className="bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors"
-            >
-              Volver al inicio
-            </a>
-          </nav>
-        </div>
-        {menuOpen && (
-          <nav className="mt-4 flex flex-col space-y-3 items-center">
-            <a
-              href="/"
-              className="bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors"
-            >
-              Volver
-            </a>
-          </nav>
-        )}
-      </header>
-
+      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} pricing={true} />
 
       {/* Main Content */}
       <main className="flex-grow p-8">

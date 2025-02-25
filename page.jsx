@@ -65,7 +65,10 @@ function Page() {
             <div className="bg-gray-50 rounded-xl shadow-lg p-8 transform hover:-translate-y-2 hover:scale-105 transition duration-300 border-l-8 border-red-500">
               <h4 className="text-xl font-bold mb-3">Blogs y Portafolios</h4>
               <p className="text-gray-600">
-                Espacios ideales para compartir tus ideas y exponer tu trabajo con estilo.
+                Aca subiere los trabajos realizados para armar un portafolio.
+                <div className="mt-4 flex justify-center">
+                  <img src="./imgs/gear-spinner.svg" alt="Spinner" className="w-16 h-16" />
+                </div>
               </p>
             </div>
           </div>

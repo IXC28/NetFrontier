@@ -15,6 +15,22 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <!-- Babel Standalone -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
@@ -22,5 +38,7 @@
     <script type="text/babel" data-presets="env,react" src="../components/Navbar.js"></script>
     <!-- Incluye el archivo JSX de la página de precios -->
     <script type="text/babel" data-presets="env,react" src="./page.jsx"></script>
+    <script type="text/babel" data-presets="env,react" src="../components/Footer.js"></script>
+
   </body>
 </html>

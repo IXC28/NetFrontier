@@ -130,15 +130,6 @@ const Navbar = ({ menuOpen, setMenuOpen, pricing = false, details = false }) => 
                   React.createElement(
                     "a",
                     {
-                      href: "#contact",
-                      className: "hover:text-red-300 transition-colors",
-                      key: "contact-link"
-                    },
-                    "Contacto"
-                  ),
-                  React.createElement(
-                    "a",
-                    {
                       href: "/pricing/index.html",
                       className:
                         "bg-gray-900 hover:bg-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full font-bold transition-colors",
@@ -209,15 +200,7 @@ const Navbar = ({ menuOpen, setMenuOpen, pricing = false, details = false }) => 
                   },
                   "Acerca de"
                 ),
-                React.createElement(
-                  "a",
-                  {
-                    href: "#contact",
-                    className: "hover:text-red-300 transition-colors",
-                    key: "m-contact-link"
-                  },
-                  "Contacto"
-                ),
+
                 React.createElement(
                   "a",
                   {
